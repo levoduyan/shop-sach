@@ -1,0 +1,28 @@
+<form (ngSubmit)="onSubmit(form)" #form="ngForm">
+  <div class="row">
+    <h4>Edit Sản Phẩm</h4>
+    <div class="col-sm-5 col-lg-4">
+      <strong class="text-danger fw-normal" *ngIf="name.invalid && (name.dirty || name.touched)">
+        <strong *ngIf="name.errors?.['required']">Không được bỏ trống</strong>
+        <strong *ngIf="name.errors?.['minlength']">Tên sản phẩm trên 5 ký tự</strong>
+      </strong>
+      <input #name="ngModel" type="text" class="form-control" [(ngModel)]="sanpham.name" name="name"
+        placeholder="Tên sản phẩm..." required minlength="5">
+      <strong class="text-danger fw-normal" *ngIf="price.invalid && (price.dirty || price.touched)">
+        <strong *ngIf="price.errors?.['required']">Không được bỏ trống</strong>
+      </strong>
+      <input #price="ngModel" type="number" class="form-control" [(ngModel)]="sanpham.price" name="price"
+        placeholder="Giá sản phẩm..." required>
+    </div>
+    <div class="col-sm-5 col-lg-4">
+      <strong class="text-danger fw-normal" *ngIf="image.invalid && (image.dirty || image.touched)">
+        <strong *ngIf="image.errors?.['required']">Không được bỏ trống</strong>
+        <strong *ngIf="image.errors?.['minlength']">Tên ảnh trên 5 ký tự</strong>
+      </strong>
+      <input #image="ngModel" type="text" class="form-control" [(ngModel)]="sanpham.image" name="image"
+        placeholder="Tên ảnh jpg,png,..." required minlength="5">
+    </div>
+  </div>
+  <button type="submit" class="btn btn-primary">Lưu</button>
+  <button type="button" class="btn btn-warning" (click)="Cancel()">Cancel</button>
+</form>

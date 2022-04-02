@@ -1,0 +1,23 @@
+<div>
+  <div class="row justify-content-center" >
+    <div class="col-md-3 text-center">
+      <div class="form-signin" style="margin-top:210px;">
+        <form (ngSubmit)="onSubmit(formlg)" #formlg="ngForm">
+          <h1 class="mb-3 fw-normal fw-bold">Login</h1>
+          <div class="form-floating mt-4">
+            <input type="user" class="form-control" id="floatingInput" placeholder="user" name="user"
+              [(ngModel)]="user.user">
+            <label for="floatingInput">Username</label>
+          </div>
+          <div class="form-floating mt-2">
+            <input type="password" class="form-control" id="floatingPassword" placeholder="password" name="password"
+              [(ngModel)]="user.password">
+            <label for="floatingPassword">Password</label>
+          </div>
+          <button class="w-100 btn btn-lg btn-primary mt-2" type="submit">Đăng nhập</button>
+          <p class="mt-5 mb-3 text-muted mt4">&copy; Lê Võ Duy An - 501200294</p>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,21 @@
+
+<div >
+  <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom" style="background-color: rgba(245, 175, 84, 0.897); height: 63px;">
+    <div class="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none">
+      
+    </div>
+
+    <div class="nav nav-tabs" id="nav-tab" role="tablist" >
+      <button class="nav-link fw-bolder" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" [routerLink]="['/admin/home']" routerLinkActive="active"
+        role="tab" aria-controls="nav-home" aria-selected="true"><i class="bi bi-house-fill"></i> Home</button>
+      <button class="nav-link fw-bolder" id="nav-product-tab" data-bs-toggle="tab" data-bs-target="#nav-product" type="button" [routerLink]="['/admin/product']" routerLinkActive="active"
+        role="tab" aria-controls="nav-product" aria-selected="false"><i class="bi bi-menu-button-wide-fill"></i> Product</button>
+      <button class="nav-link fw-bolder" id="nav-order-tab" data-bs-toggle="tab" data-bs-target="#nav-order" type="button" [routerLink]="['/admin/order']" routerLinkActive="active"
+        role="tab" aria-controls="nav-order" aria-selected="false"><i class="bi bi-receipt"></i> Order</button>
+    </div>
+
+    <div class="col-md-3 text-end">
+      <button type="button" (click)="logout()" class="btn btn-outline-success fw-bolder mb-3" style="margin-right: 10px;" ><i class="bi bi-arrow-right-square-fill"></i> Logout</button>
+    </div>
+  </header>
+</div>

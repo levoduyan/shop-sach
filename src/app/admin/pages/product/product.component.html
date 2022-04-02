@@ -1,0 +1,22 @@
+<div class="tab-pane fade show active pt-3" id="nav-order" role="tabpanel" aria-labelledby="nav-order-tab">
+  <div class="container">
+    <h3 class="text-center fw-bolder">Quản Lý Sản Phẩm</h3>
+    <hr>
+    <div class="row justify-content-between">
+      <div class="col">
+        <div *ngIf="!showEdit">
+          <button *ngIf="!showForm" (click)="ShowForm()" class="btn btn-success">Thêm Sản Phẩm</button>
+        </div>
+        <app-form *ngIf="showForm" (cancel)="cancelForm($event)"></app-form>
+        <app-formedit *ngIf="showEdit" [edit]="sanpham" (cancel)="cancelEdit($event)"></app-formedit>
+      </div>
+      <div class="col-4">
+        <form class="col-lg-10 mb-lg-0" #form="ngForm" >
+          <input type="text" class="form-control"  [(ngModel)]="search" placeholder="Search..." aria-label="Search">
+        </form>
+      </div>
+    </div>
+    <hr>
+    <app-list [list]="data" (edit)="getlist($event)" (showform)="showedit($event)"></app-list>
+  </div>
+</div>
